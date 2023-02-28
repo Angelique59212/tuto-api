@@ -58,7 +58,7 @@ class Post
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $updatedAt;
 
-    #[ORM\ManyToOne(inversedBy: 'posts')]
+    #[ORM\ManyToOne(inversedBy: 'posts', cascade: "persist")]
     #[Groups('read:item', 'put:Post')]
     private ?Category $category;
 
